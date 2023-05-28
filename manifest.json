@@ -2,10 +2,10 @@
   "id": "obsidian-year-timeline",
   "name": "Year Timeline",
   "version": "1.0.0",
-  "minAppVersion": "1.1.15",
+  "minAppVersion": "1.2.8",
   "description": "Create a year timeline in your notes.",
   "author": "TanelTM",
   "authorUrl": "https://github.com/taneltm",
-  "fundingUrl": "",
+  "fundingUrl": "https://ko-fi.com/taneltm",
   "isDesktopOnly": false
 }

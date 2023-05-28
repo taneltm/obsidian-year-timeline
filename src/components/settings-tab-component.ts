@@ -13,7 +13,7 @@ export class SettingsTabComponent extends PluginSettingTab {
   constructor(app: App, plugin: YearTimelinePlugin) {
     super(app, plugin);
     this.plugin = plugin;
-    this.previewDate = "2023-06-01";
+    this.previewDate = moment().format("YYYY-06-01");
   }
 
   display(): void {
@@ -26,6 +26,7 @@ export class SettingsTabComponent extends PluginSettingTab {
     this.displayPreview();
     this.displayDayMarkerSettings();
     this.displayCustomMarkerSettings();
+    this.displayDailyNotesIntegrationSettings();
   }
 
   displayPreview() {
@@ -656,6 +657,24 @@ export class SettingsTabComponent extends PluginSettingTab {
       this.plugin.reload();
       this.display();
     })
+  }
+
+  displayDailyNotesIntegrationSettings() {
+    const {containerEl} = this;
+
+    containerEl.createEl('h2', {text: 'Daily Notes integration'});
+
+    new Setting(containerEl)
+    .setName('Daily Notes integration')
+    .setDesc('Navigate between daily notes by clicking on the timeline')
+    .addToggle((component) => component
+      .setValue(this.plugin.settings.dailyNoteIntegration.enabled)
+      .onChange(async (value) => {
+        this.plugin.settings.dailyNoteIntegration.enabled = value;
+        await this.plugin.saveSettings();
+        this.plugin.reload();
+      })
+    )
   }
 }
 

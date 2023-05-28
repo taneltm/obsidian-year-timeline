@@ -124,20 +124,26 @@ export const DEFAULT_SETTINGS: Settings = {
     <text fill='#CCE0E2' x='3450' y='80'>December</text>
   </g>
 </svg>`,
-  }
+  },
+
+  dailyNoteIntegration: {
+    enabled: false,
+    format: 'YYYY-MM-DD',
+    directory: '',
+  },
 }
 
 export const snippets = [
   {
     buttonLabel: 'For Daily Notes template',
-    code: '<i data-timeline-year="{{date:YYYY}}" data-timeline-day="{{date:DDD}}"></i>',
+    code: '<i data-timeline="{{date:DDD}}"></i>',
   },
   {
     buttonLabel: 'For Templater template',
-    code: '<i data-timeline-year="<% tp.date.now("YYYY", 0, tp.file.title) %>" data-timeline-day="<% tp.date.now("DDD", 0, tp.file.title) %>"></i>',
+    code: '<i data-timeline="<% tp.date.now("DDD", 0, tp.file.title) %>"></i>',
   },
   {
     buttonLabel: 'For DataView (JavaScript)',
-    code: '```dataviewjs\ndv.el("div", "", { attr: {\n  "data-timeline-year": moment().format("YYYY"),\n  "data-timeline-day": moment().format("DDD"),\n}})\n```',
+    code: '```dataviewjs\ndv.el("i", "", { attr: {\n  "data-timeline": moment().format("DDD"),\n}})\n```',
   },
 ]

@@ -57,12 +57,17 @@ export default interface Settings {
     };
 
     custom: string;
-  }
+  };
 
   customMarkers: Array<{
     character: string;
     date: string;
   }>;
+
+  dailyNoteIntegration: {
+    format: string;
+    directory: string;
+  }
 }
 
 

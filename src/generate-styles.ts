@@ -14,7 +14,7 @@ export function generateStyles(settings: Settings) {
 }
 
 function generateBaseStyle(settings: Settings) {
-  const range = Array.from({ length: Number(moment('2023-12-31').format('DDD') + 1) }, (_, i) => i);
+  const range = Array.from({ length: Number(moment('2023-12-31').format('DDD')) }, (_, i) => i);
 
   return `
     [data-timeline] {
@@ -24,6 +24,7 @@ function generateBaseStyle(settings: Settings) {
       aspect-ratio: 18/1;
       background-repeat: no-repeat;
       background-image: url("data:image/svg+xml,${ generateMainSvg(settings) }");
+      ${ settings.dailyNoteIntegration.enabled ? 'cursor: crosshair;' : '' } 
     }
 
     [data-timeline]::after {
