@@ -73,6 +73,7 @@ export async function setup(app: App, plugin: YearTimelinePlugin) {
   await new Promise((resolve) => setTimeout(resolve, 2000));
 
   const { folder, format } = (
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (window.app as any).internalPlugins?.getPluginById('daily-notes')?.instance?.options || {}
   );
 

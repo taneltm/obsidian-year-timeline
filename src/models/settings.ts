@@ -65,9 +65,10 @@ export default interface Settings {
   }>;
 
   dailyNoteIntegration: {
+    enabled: boolean;
     format: string;
     directory: string;
-  }
+  };
 }
 
 
