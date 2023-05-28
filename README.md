@@ -9,7 +9,7 @@ Change colors, rename months and place markers for important events on your time
 
 ## How to use it in Daily Notes or Templater templates
 1. Install the plugin
-2. Open the Year Timeline plugin settings page and generate a snippet.
+2. Open the Year Timeline plugin settings page and generate a snippet.  
    Or copy from here
    - Daily Notes
       ```html
