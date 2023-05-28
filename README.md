@@ -7,10 +7,18 @@ Change colors, rename months and place markers for important events on your time
 
 ![](images/screenshot.png)
 
-## How to use it in template files
+## How to use it in Daily Notes or Templater templates
 1. Install the plugin
-2. Open the plugin settings page and generate a snippet.
-   Snippets can be generated for a Daily Notes template, a Templater template.
+2. Open the Year Timeline plugin settings page and generate a snippet.
+   Or copy from here
+   - Daily Notes
+      ```html
+      <i data-timeline="{{date:DDD}}"></i>
+      ```
+   - Templater
+      ```html
+      <i data-timeline="<% tp.date.now("DDD", 0, tp.file.title) %>"></i>
+      ```
 3. Place the generated snippet in your markdown template file where you want the timeline to appear.
 
 ### Daily Notes integration (experimental)
